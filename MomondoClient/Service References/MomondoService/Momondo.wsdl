@@ -1,0 +1,1616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.skygate.dk/momondo/" xmlns:s1="http://www.skygate.dk/momondo/AbstractTypes" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.skygate.dk/momondo/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.skygate.dk/momondo/">
+      <s:element name="StartFlightSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orig" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dest" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="departDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="returnDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="oneway" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="live" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartFlightSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StartFlightSearchResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFlightResults">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateFlightResultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateFlightResultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCurrency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="currency" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCurrencyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetSearchView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="view" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSearchViewResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetFlexible">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="show" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetFlexibleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSupplierProducts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orig" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dest" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="departDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="returnDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="oneway" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupplierProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSupplierProductsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupplierProductsEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orig" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dest" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="departDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="returnDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="oneway" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupplierProductsExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSupplierProductsExResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartLiveSearchSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="supplierId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartLiveSearchSupplierResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPriceGraphData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orig" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dest" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="oneway" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="departYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="departMonth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="returnYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="returnMonth" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPriceGraphDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPriceGraphDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhereToGo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="origCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destIdent" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="departYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="departMonth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="priceFrom" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="priceTo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ambCat" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhereToGoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhereToGoResult" type="tns:ArrayOfWhereToGoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWhereToGoResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WhereToGoResult" nillable="true" type="tns:WhereToGoResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WhereToGoResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OrigCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Month" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Year" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestState" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepartTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriceEUR" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuoteTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupplierId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmbCat" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="HotelRates" type="tns:ArrayOfInt" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WhereToGoGetUpdated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="origCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhereToGoGetUpdatedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhereToGoGetUpdatedResult" type="tns:WhereToGoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPriceAgent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="range" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="frequency" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPriceAgentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddFeedback">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flightsRating" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="hotelsRating" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="cityGuideRating" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="easeOfUseRating" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="designRating" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="credibilityRating" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="sendCopy" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFeedbackResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewsletterSignUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewsletterSignUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NewsletterSignUpResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GingerSplashCompetition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newsletter" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GingerSplashCompetitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GingerSplashCompetitionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompetitionSignup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="competitionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newsletter" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompetitionSignupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompetitionSignupResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrizeDrawSignup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="competitionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newsletter" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrizeDrawSignupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrizeDrawSignupResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="logNoResults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientOrig" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientDest" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="clientReturnTrip" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientDepartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientReturnDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supplierIDs" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="logNoResultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logNoResultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfWhereToGoResult" nillable="true" type="tns:ArrayOfWhereToGoResult" />
+      <s:element name="WhereToGoResult" nillable="true" type="tns:WhereToGoResult" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+    <s:schema targetNamespace="http://www.skygate.dk/momondo/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="StartFlightSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:StartFlightSearch" />
+  </wsdl:message>
+  <wsdl:message name="StartFlightSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:StartFlightSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFlightResultsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFlightResults" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFlightResultsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFlightResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrencySoapIn">
+    <wsdl:part name="parameters" element="tns:SetCurrency" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrencySoapOut">
+    <wsdl:part name="parameters" element="tns:SetCurrencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSearchViewSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSearchView" />
+  </wsdl:message>
+  <wsdl:message name="SetSearchViewSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSearchViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetFlexibleSoapIn">
+    <wsdl:part name="parameters" element="tns:SetFlexible" />
+  </wsdl:message>
+  <wsdl:message name="SetFlexibleSoapOut">
+    <wsdl:part name="parameters" element="tns:SetFlexibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSupplierProducts" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSupplierProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierProductsExSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSupplierProductsEx" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierProductsExSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSupplierProductsExResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartLiveSearchSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:StartLiveSearchSupplier" />
+  </wsdl:message>
+  <wsdl:message name="StartLiveSearchSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:StartLiveSearchSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceGraphDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPriceGraphData" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceGraphDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPriceGraphDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="WhereToGoSoapIn">
+    <wsdl:part name="parameters" element="tns:WhereToGo" />
+  </wsdl:message>
+  <wsdl:message name="WhereToGoSoapOut">
+    <wsdl:part name="parameters" element="tns:WhereToGoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WhereToGoGetUpdatedSoapIn">
+    <wsdl:part name="parameters" element="tns:WhereToGoGetUpdated" />
+  </wsdl:message>
+  <wsdl:message name="WhereToGoGetUpdatedSoapOut">
+    <wsdl:part name="parameters" element="tns:WhereToGoGetUpdatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPriceAgentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPriceAgent" />
+  </wsdl:message>
+  <wsdl:message name="AddPriceAgentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPriceAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFeedbackSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFeedback" />
+  </wsdl:message>
+  <wsdl:message name="AddFeedbackSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewsletterSignUpSoapIn">
+    <wsdl:part name="parameters" element="tns:NewsletterSignUp" />
+  </wsdl:message>
+  <wsdl:message name="NewsletterSignUpSoapOut">
+    <wsdl:part name="parameters" element="tns:NewsletterSignUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="GingerSplashCompetitionSoapIn">
+    <wsdl:part name="parameters" element="tns:GingerSplashCompetition" />
+  </wsdl:message>
+  <wsdl:message name="GingerSplashCompetitionSoapOut">
+    <wsdl:part name="parameters" element="tns:GingerSplashCompetitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompetitionSignupSoapIn">
+    <wsdl:part name="parameters" element="tns:CompetitionSignup" />
+  </wsdl:message>
+  <wsdl:message name="CompetitionSignupSoapOut">
+    <wsdl:part name="parameters" element="tns:CompetitionSignupResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrizeDrawSignupSoapIn">
+    <wsdl:part name="parameters" element="tns:PrizeDrawSignup" />
+  </wsdl:message>
+  <wsdl:message name="PrizeDrawSignupSoapOut">
+    <wsdl:part name="parameters" element="tns:PrizeDrawSignupResponse" />
+  </wsdl:message>
+  <wsdl:message name="logNoResultsSoapIn">
+    <wsdl:part name="parameters" element="tns:logNoResults" />
+  </wsdl:message>
+  <wsdl:message name="logNoResultsSoapOut">
+    <wsdl:part name="parameters" element="tns:logNoResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartFlightSearchHttpGetIn">
+    <wsdl:part name="orig" type="s:string" />
+    <wsdl:part name="dest" type="s:string" />
+    <wsdl:part name="departDate" type="s:string" />
+    <wsdl:part name="returnDate" type="s:string" />
+    <wsdl:part name="oneway" type="s:string" />
+    <wsdl:part name="live" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StartFlightSearchHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFlightResultsHttpGetIn" />
+  <wsdl:message name="UpdateFlightResultsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrencyHttpGetIn">
+    <wsdl:part name="currency" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrencyHttpGetOut" />
+  <wsdl:message name="SetSearchViewHttpGetIn">
+    <wsdl:part name="view" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetSearchViewHttpGetOut" />
+  <wsdl:message name="SetFlexibleHttpGetIn">
+    <wsdl:part name="show" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetFlexibleHttpGetOut" />
+  <wsdl:message name="GetSupplierProductsHttpGetIn">
+    <wsdl:part name="orig" type="s:string" />
+    <wsdl:part name="dest" type="s:string" />
+    <wsdl:part name="departDate" type="s:string" />
+    <wsdl:part name="returnDate" type="s:string" />
+    <wsdl:part name="oneway" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierProductsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="StartLiveSearchSupplierHttpGetIn">
+    <wsdl:part name="supplierId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StartLiveSearchSupplierHttpGetOut" />
+  <wsdl:message name="GetPriceGraphDataHttpGetIn">
+    <wsdl:part name="orig" type="s:string" />
+    <wsdl:part name="dest" type="s:string" />
+    <wsdl:part name="oneway" type="s:string" />
+    <wsdl:part name="departYear" type="s:string" />
+    <wsdl:part name="departMonth" type="s:string" />
+    <wsdl:part name="returnYear" type="s:string" />
+    <wsdl:part name="returnMonth" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceGraphDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="WhereToGoHttpGetIn">
+    <wsdl:part name="mode" type="s:string" />
+    <wsdl:part name="maxCount" type="s:string" />
+    <wsdl:part name="origCode" type="s:string" />
+    <wsdl:part name="destIdent" type="s:string" />
+    <wsdl:part name="departYear" type="s:string" />
+    <wsdl:part name="departMonth" type="s:string" />
+    <wsdl:part name="priceFrom" type="s:string" />
+    <wsdl:part name="priceTo" type="s:string" />
+    <wsdl:part name="ambCat" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WhereToGoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfWhereToGoResult" />
+  </wsdl:message>
+  <wsdl:message name="WhereToGoGetUpdatedHttpGetIn">
+    <wsdl:part name="origCode" type="s:string" />
+    <wsdl:part name="destCode" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WhereToGoGetUpdatedHttpGetOut">
+    <wsdl:part name="Body" element="tns:WhereToGoResult" />
+  </wsdl:message>
+  <wsdl:message name="AddPriceAgentHttpGetIn">
+    <wsdl:part name="range" type="s:string" />
+    <wsdl:part name="frequency" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPriceAgentHttpGetOut" />
+  <wsdl:message name="AddFeedbackHttpGetIn">
+    <wsdl:part name="comments" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="flightsRating" type="s:string" />
+    <wsdl:part name="hotelsRating" type="s:string" />
+    <wsdl:part name="cityGuideRating" type="s:string" />
+    <wsdl:part name="easeOfUseRating" type="s:string" />
+    <wsdl:part name="designRating" type="s:string" />
+    <wsdl:part name="credibilityRating" type="s:string" />
+    <wsdl:part name="sendCopy" type="s:string" />
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFeedbackHttpGetOut" />
+  <wsdl:message name="NewsletterSignUpHttpGetIn">
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NewsletterSignUpHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GingerSplashCompetitionHttpGetIn">
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="answer" type="s:string" />
+    <wsdl:part name="newsletter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GingerSplashCompetitionHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CompetitionSignupHttpGetIn">
+    <wsdl:part name="competitionID" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="answer" type="s:string" />
+    <wsdl:part name="newsletter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CompetitionSignupHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PrizeDrawSignupHttpGetIn">
+    <wsdl:part name="competitionID" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="newsletter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PrizeDrawSignupHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="logNoResultsHttpGetIn">
+    <wsdl:part name="clientOrig" type="s:string" />
+    <wsdl:part name="clientDest" type="s:string" />
+    <wsdl:part name="clientReturnTrip" type="s:string" />
+    <wsdl:part name="clientDepartDate" type="s:string" />
+    <wsdl:part name="clientReturnDate" type="s:string" />
+    <wsdl:part name="supplierIDs" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="logNoResultsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="StartFlightSearchHttpPostIn">
+    <wsdl:part name="orig" type="s:string" />
+    <wsdl:part name="dest" type="s:string" />
+    <wsdl:part name="departDate" type="s:string" />
+    <wsdl:part name="returnDate" type="s:string" />
+    <wsdl:part name="oneway" type="s:string" />
+    <wsdl:part name="live" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StartFlightSearchHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFlightResultsHttpPostIn" />
+  <wsdl:message name="UpdateFlightResultsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrencyHttpPostIn">
+    <wsdl:part name="currency" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrencyHttpPostOut" />
+  <wsdl:message name="SetSearchViewHttpPostIn">
+    <wsdl:part name="view" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetSearchViewHttpPostOut" />
+  <wsdl:message name="SetFlexibleHttpPostIn">
+    <wsdl:part name="show" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetFlexibleHttpPostOut" />
+  <wsdl:message name="GetSupplierProductsHttpPostIn">
+    <wsdl:part name="orig" type="s:string" />
+    <wsdl:part name="dest" type="s:string" />
+    <wsdl:part name="departDate" type="s:string" />
+    <wsdl:part name="returnDate" type="s:string" />
+    <wsdl:part name="oneway" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierProductsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="StartLiveSearchSupplierHttpPostIn">
+    <wsdl:part name="supplierId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StartLiveSearchSupplierHttpPostOut" />
+  <wsdl:message name="GetPriceGraphDataHttpPostIn">
+    <wsdl:part name="orig" type="s:string" />
+    <wsdl:part name="dest" type="s:string" />
+    <wsdl:part name="oneway" type="s:string" />
+    <wsdl:part name="departYear" type="s:string" />
+    <wsdl:part name="departMonth" type="s:string" />
+    <wsdl:part name="returnYear" type="s:string" />
+    <wsdl:part name="returnMonth" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceGraphDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="WhereToGoHttpPostIn">
+    <wsdl:part name="mode" type="s:string" />
+    <wsdl:part name="maxCount" type="s:string" />
+    <wsdl:part name="origCode" type="s:string" />
+    <wsdl:part name="destIdent" type="s:string" />
+    <wsdl:part name="departYear" type="s:string" />
+    <wsdl:part name="departMonth" type="s:string" />
+    <wsdl:part name="priceFrom" type="s:string" />
+    <wsdl:part name="priceTo" type="s:string" />
+    <wsdl:part name="ambCat" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WhereToGoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfWhereToGoResult" />
+  </wsdl:message>
+  <wsdl:message name="WhereToGoGetUpdatedHttpPostIn">
+    <wsdl:part name="origCode" type="s:string" />
+    <wsdl:part name="destCode" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WhereToGoGetUpdatedHttpPostOut">
+    <wsdl:part name="Body" element="tns:WhereToGoResult" />
+  </wsdl:message>
+  <wsdl:message name="AddPriceAgentHttpPostIn">
+    <wsdl:part name="range" type="s:string" />
+    <wsdl:part name="frequency" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPriceAgentHttpPostOut" />
+  <wsdl:message name="AddFeedbackHttpPostIn">
+    <wsdl:part name="comments" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="flightsRating" type="s:string" />
+    <wsdl:part name="hotelsRating" type="s:string" />
+    <wsdl:part name="cityGuideRating" type="s:string" />
+    <wsdl:part name="easeOfUseRating" type="s:string" />
+    <wsdl:part name="designRating" type="s:string" />
+    <wsdl:part name="credibilityRating" type="s:string" />
+    <wsdl:part name="sendCopy" type="s:string" />
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFeedbackHttpPostOut" />
+  <wsdl:message name="NewsletterSignUpHttpPostIn">
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NewsletterSignUpHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GingerSplashCompetitionHttpPostIn">
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="answer" type="s:string" />
+    <wsdl:part name="newsletter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GingerSplashCompetitionHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CompetitionSignupHttpPostIn">
+    <wsdl:part name="competitionID" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="answer" type="s:string" />
+    <wsdl:part name="newsletter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CompetitionSignupHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PrizeDrawSignupHttpPostIn">
+    <wsdl:part name="competitionID" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="newsletter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PrizeDrawSignupHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="logNoResultsHttpPostIn">
+    <wsdl:part name="clientOrig" type="s:string" />
+    <wsdl:part name="clientDest" type="s:string" />
+    <wsdl:part name="clientReturnTrip" type="s:string" />
+    <wsdl:part name="clientDepartDate" type="s:string" />
+    <wsdl:part name="clientReturnDate" type="s:string" />
+    <wsdl:part name="supplierIDs" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="logNoResultsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="MomondoWSSoap">
+    <wsdl:operation name="StartFlightSearch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Initiates a flight search</wsdl:documentation>
+      <wsdl:input message="tns:StartFlightSearchSoapIn" />
+      <wsdl:output message="tns:StartFlightSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFlightResults">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Gets the script to update the flight results.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateFlightResultsSoapIn" />
+      <wsdl:output message="tns:UpdateFlightResultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrency">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the currency</wsdl:documentation>
+      <wsdl:input message="tns:SetCurrencySoapIn" />
+      <wsdl:output message="tns:SetCurrencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSearchView">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Sets the search view</wsdl:documentation>
+      <wsdl:input message="tns:SetSearchViewSoapIn" />
+      <wsdl:output message="tns:SetSearchViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFlexible">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Sets the show flexible</wsdl:documentation>
+      <wsdl:input message="tns:SetFlexibleSoapIn" />
+      <wsdl:output message="tns:SetFlexibleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProducts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get supplier products / flight ads</wsdl:documentation>
+      <wsdl:input message="tns:GetSupplierProductsSoapIn" />
+      <wsdl:output message="tns:GetSupplierProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProductsEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get supplier products / flight ads</wsdl:documentation>
+      <wsdl:input message="tns:GetSupplierProductsExSoapIn" />
+      <wsdl:output message="tns:GetSupplierProductsExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartLiveSearchSupplier">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Starts a live search on a single supplier</wsdl:documentation>
+      <wsdl:input message="tns:StartLiveSearchSupplierSoapIn" />
+      <wsdl:output message="tns:StartLiveSearchSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceGraphData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve PriceGraph data.</wsdl:documentation>
+      <wsdl:input message="tns:GetPriceGraphDataSoapIn" />
+      <wsdl:output message="tns:GetPriceGraphDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve WhereToGo data.</wsdl:documentation>
+      <wsdl:input message="tns:WhereToGoSoapIn" />
+      <wsdl:output message="tns:WhereToGoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGoGetUpdated">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve updated WhereToGo data for a specific route.</wsdl:documentation>
+      <wsdl:input message="tns:WhereToGoGetUpdatedSoapIn" />
+      <wsdl:output message="tns:WhereToGoGetUpdatedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPriceAgent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add priceagent.</wsdl:documentation>
+      <wsdl:input message="tns:AddPriceAgentSoapIn" />
+      <wsdl:output message="tns:AddPriceAgentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFeedback">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add feedback.</wsdl:documentation>
+      <wsdl:input message="tns:AddFeedbackSoapIn" />
+      <wsdl:output message="tns:AddFeedbackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewsletterSignUp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sign up for newsletter</wsdl:documentation>
+      <wsdl:input message="tns:NewsletterSignUpSoapIn" />
+      <wsdl:output message="tns:NewsletterSignUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GingerSplashCompetition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. GingerSplash Competition</wsdl:documentation>
+      <wsdl:input message="tns:GingerSplashCompetitionSoapIn" />
+      <wsdl:output message="tns:GingerSplashCompetitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompetitionSignup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. General Competition</wsdl:documentation>
+      <wsdl:input message="tns:CompetitionSignupSoapIn" />
+      <wsdl:output message="tns:CompetitionSignupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrizeDrawSignup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. General Prize Draw Competition</wsdl:documentation>
+      <wsdl:input message="tns:PrizeDrawSignupSoapIn" />
+      <wsdl:output message="tns:PrizeDrawSignupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="logNoResults">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete</wsdl:documentation>
+      <wsdl:input message="tns:logNoResultsSoapIn" />
+      <wsdl:output message="tns:logNoResultsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MomondoWSHttpGet">
+    <wsdl:operation name="StartFlightSearch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Initiates a flight search</wsdl:documentation>
+      <wsdl:input message="tns:StartFlightSearchHttpGetIn" />
+      <wsdl:output message="tns:StartFlightSearchHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFlightResults">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Gets the script to update the flight results.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateFlightResultsHttpGetIn" />
+      <wsdl:output message="tns:UpdateFlightResultsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrency">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the currency</wsdl:documentation>
+      <wsdl:input message="tns:SetCurrencyHttpGetIn" />
+      <wsdl:output message="tns:SetCurrencyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSearchView">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Sets the search view</wsdl:documentation>
+      <wsdl:input message="tns:SetSearchViewHttpGetIn" />
+      <wsdl:output message="tns:SetSearchViewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFlexible">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Sets the show flexible</wsdl:documentation>
+      <wsdl:input message="tns:SetFlexibleHttpGetIn" />
+      <wsdl:output message="tns:SetFlexibleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProducts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get supplier products / flight ads</wsdl:documentation>
+      <wsdl:input message="tns:GetSupplierProductsHttpGetIn" />
+      <wsdl:output message="tns:GetSupplierProductsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartLiveSearchSupplier">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Starts a live search on a single supplier</wsdl:documentation>
+      <wsdl:input message="tns:StartLiveSearchSupplierHttpGetIn" />
+      <wsdl:output message="tns:StartLiveSearchSupplierHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceGraphData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve PriceGraph data.</wsdl:documentation>
+      <wsdl:input message="tns:GetPriceGraphDataHttpGetIn" />
+      <wsdl:output message="tns:GetPriceGraphDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve WhereToGo data.</wsdl:documentation>
+      <wsdl:input message="tns:WhereToGoHttpGetIn" />
+      <wsdl:output message="tns:WhereToGoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGoGetUpdated">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve updated WhereToGo data for a specific route.</wsdl:documentation>
+      <wsdl:input message="tns:WhereToGoGetUpdatedHttpGetIn" />
+      <wsdl:output message="tns:WhereToGoGetUpdatedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPriceAgent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add priceagent.</wsdl:documentation>
+      <wsdl:input message="tns:AddPriceAgentHttpGetIn" />
+      <wsdl:output message="tns:AddPriceAgentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFeedback">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add feedback.</wsdl:documentation>
+      <wsdl:input message="tns:AddFeedbackHttpGetIn" />
+      <wsdl:output message="tns:AddFeedbackHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewsletterSignUp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sign up for newsletter</wsdl:documentation>
+      <wsdl:input message="tns:NewsletterSignUpHttpGetIn" />
+      <wsdl:output message="tns:NewsletterSignUpHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GingerSplashCompetition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. GingerSplash Competition</wsdl:documentation>
+      <wsdl:input message="tns:GingerSplashCompetitionHttpGetIn" />
+      <wsdl:output message="tns:GingerSplashCompetitionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompetitionSignup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. General Competition</wsdl:documentation>
+      <wsdl:input message="tns:CompetitionSignupHttpGetIn" />
+      <wsdl:output message="tns:CompetitionSignupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrizeDrawSignup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. General Prize Draw Competition</wsdl:documentation>
+      <wsdl:input message="tns:PrizeDrawSignupHttpGetIn" />
+      <wsdl:output message="tns:PrizeDrawSignupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="logNoResults">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete</wsdl:documentation>
+      <wsdl:input message="tns:logNoResultsHttpGetIn" />
+      <wsdl:output message="tns:logNoResultsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MomondoWSHttpPost">
+    <wsdl:operation name="StartFlightSearch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Initiates a flight search</wsdl:documentation>
+      <wsdl:input message="tns:StartFlightSearchHttpPostIn" />
+      <wsdl:output message="tns:StartFlightSearchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFlightResults">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Gets the script to update the flight results.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateFlightResultsHttpPostIn" />
+      <wsdl:output message="tns:UpdateFlightResultsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrency">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the currency</wsdl:documentation>
+      <wsdl:input message="tns:SetCurrencyHttpPostIn" />
+      <wsdl:output message="tns:SetCurrencyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSearchView">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Sets the search view</wsdl:documentation>
+      <wsdl:input message="tns:SetSearchViewHttpPostIn" />
+      <wsdl:output message="tns:SetSearchViewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFlexible">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Sets the show flexible</wsdl:documentation>
+      <wsdl:input message="tns:SetFlexibleHttpPostIn" />
+      <wsdl:output message="tns:SetFlexibleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProducts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get supplier products / flight ads</wsdl:documentation>
+      <wsdl:input message="tns:GetSupplierProductsHttpPostIn" />
+      <wsdl:output message="tns:GetSupplierProductsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartLiveSearchSupplier">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. Starts a live search on a single supplier</wsdl:documentation>
+      <wsdl:input message="tns:StartLiveSearchSupplierHttpPostIn" />
+      <wsdl:output message="tns:StartLiveSearchSupplierHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceGraphData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve PriceGraph data.</wsdl:documentation>
+      <wsdl:input message="tns:GetPriceGraphDataHttpPostIn" />
+      <wsdl:output message="tns:GetPriceGraphDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve WhereToGo data.</wsdl:documentation>
+      <wsdl:input message="tns:WhereToGoHttpPostIn" />
+      <wsdl:output message="tns:WhereToGoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGoGetUpdated">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve updated WhereToGo data for a specific route.</wsdl:documentation>
+      <wsdl:input message="tns:WhereToGoGetUpdatedHttpPostIn" />
+      <wsdl:output message="tns:WhereToGoGetUpdatedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPriceAgent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add priceagent.</wsdl:documentation>
+      <wsdl:input message="tns:AddPriceAgentHttpPostIn" />
+      <wsdl:output message="tns:AddPriceAgentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFeedback">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add feedback.</wsdl:documentation>
+      <wsdl:input message="tns:AddFeedbackHttpPostIn" />
+      <wsdl:output message="tns:AddFeedbackHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewsletterSignUp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sign up for newsletter</wsdl:documentation>
+      <wsdl:input message="tns:NewsletterSignUpHttpPostIn" />
+      <wsdl:output message="tns:NewsletterSignUpHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GingerSplashCompetition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. GingerSplash Competition</wsdl:documentation>
+      <wsdl:input message="tns:GingerSplashCompetitionHttpPostIn" />
+      <wsdl:output message="tns:GingerSplashCompetitionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompetitionSignup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. General Competition</wsdl:documentation>
+      <wsdl:input message="tns:CompetitionSignupHttpPostIn" />
+      <wsdl:output message="tns:CompetitionSignupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrizeDrawSignup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete. General Prize Draw Competition</wsdl:documentation>
+      <wsdl:input message="tns:PrizeDrawSignupHttpPostIn" />
+      <wsdl:output message="tns:PrizeDrawSignupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="logNoResults">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obsolete</wsdl:documentation>
+      <wsdl:input message="tns:logNoResultsHttpPostIn" />
+      <wsdl:output message="tns:logNoResultsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MomondoWSSoap" type="tns:MomondoWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StartFlightSearch">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/StartFlightSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFlightResults">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/UpdateFlightResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrency">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/SetCurrency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSearchView">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/SetSearchView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFlexible">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/SetFlexible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProducts">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/GetSupplierProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProductsEx">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/GetSupplierProductsEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartLiveSearchSupplier">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/StartLiveSearchSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceGraphData">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/GetPriceGraphData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGo">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/WhereToGo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGoGetUpdated">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/WhereToGoGetUpdated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPriceAgent">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/AddPriceAgent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFeedback">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/AddFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewsletterSignUp">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/NewsletterSignUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GingerSplashCompetition">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/GingerSplashCompetition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompetitionSignup">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/CompetitionSignup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrizeDrawSignup">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/PrizeDrawSignup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logNoResults">
+      <soap:operation soapAction="http://www.skygate.dk/momondo/logNoResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MomondoWSSoap12" type="tns:MomondoWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StartFlightSearch">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/StartFlightSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFlightResults">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/UpdateFlightResults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrency">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/SetCurrency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSearchView">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/SetSearchView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFlexible">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/SetFlexible" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProducts">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/GetSupplierProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProductsEx">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/GetSupplierProductsEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartLiveSearchSupplier">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/StartLiveSearchSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceGraphData">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/GetPriceGraphData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGo">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/WhereToGo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGoGetUpdated">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/WhereToGoGetUpdated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPriceAgent">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/AddPriceAgent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFeedback">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/AddFeedback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewsletterSignUp">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/NewsletterSignUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GingerSplashCompetition">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/GingerSplashCompetition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompetitionSignup">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/CompetitionSignup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrizeDrawSignup">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/PrizeDrawSignup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logNoResults">
+      <soap12:operation soapAction="http://www.skygate.dk/momondo/logNoResults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MomondoWSHttpGet" type="tns:MomondoWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="StartFlightSearch">
+      <http:operation location="/StartFlightSearch" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFlightResults">
+      <http:operation location="/UpdateFlightResults" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrency">
+      <http:operation location="/SetCurrency" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetSearchView">
+      <http:operation location="/SetSearchView" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetFlexible">
+      <http:operation location="/SetFlexible" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProducts">
+      <http:operation location="/GetSupplierProducts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartLiveSearchSupplier">
+      <http:operation location="/StartLiveSearchSupplier" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceGraphData">
+      <http:operation location="/GetPriceGraphData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGo">
+      <http:operation location="/WhereToGo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGoGetUpdated">
+      <http:operation location="/WhereToGoGetUpdated" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPriceAgent">
+      <http:operation location="/AddPriceAgent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="AddFeedback">
+      <http:operation location="/AddFeedback" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="NewsletterSignUp">
+      <http:operation location="/NewsletterSignUp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GingerSplashCompetition">
+      <http:operation location="/GingerSplashCompetition" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompetitionSignup">
+      <http:operation location="/CompetitionSignup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrizeDrawSignup">
+      <http:operation location="/PrizeDrawSignup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logNoResults">
+      <http:operation location="/logNoResults" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MomondoWSHttpPost" type="tns:MomondoWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="StartFlightSearch">
+      <http:operation location="/StartFlightSearch" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFlightResults">
+      <http:operation location="/UpdateFlightResults" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrency">
+      <http:operation location="/SetCurrency" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetSearchView">
+      <http:operation location="/SetSearchView" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetFlexible">
+      <http:operation location="/SetFlexible" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProducts">
+      <http:operation location="/GetSupplierProducts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartLiveSearchSupplier">
+      <http:operation location="/StartLiveSearchSupplier" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceGraphData">
+      <http:operation location="/GetPriceGraphData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGo">
+      <http:operation location="/WhereToGo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhereToGoGetUpdated">
+      <http:operation location="/WhereToGoGetUpdated" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPriceAgent">
+      <http:operation location="/AddPriceAgent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="AddFeedback">
+      <http:operation location="/AddFeedback" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="NewsletterSignUp">
+      <http:operation location="/NewsletterSignUp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GingerSplashCompetition">
+      <http:operation location="/GingerSplashCompetition" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompetitionSignup">
+      <http:operation location="/CompetitionSignup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrizeDrawSignup">
+      <http:operation location="/PrizeDrawSignup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logNoResults">
+      <http:operation location="/logNoResults" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MomondoWS">
+    <wsdl:port name="MomondoWSSoap" binding="tns:MomondoWSSoap">
+      <soap:address location="http://www.momondo.com/Momondo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MomondoWSSoap12" binding="tns:MomondoWSSoap12">
+      <soap12:address location="http://www.momondo.com/Momondo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MomondoWSHttpGet" binding="tns:MomondoWSHttpGet">
+      <http:address location="http://www.momondo.com/Momondo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MomondoWSHttpPost" binding="tns:MomondoWSHttpPost">
+      <http:address location="http://www.momondo.com/Momondo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

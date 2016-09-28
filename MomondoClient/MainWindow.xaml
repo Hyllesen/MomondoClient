@@ -4,9 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MomondoClient"
+        xmlns:vm="clr-namespace:MomondoClient.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
     <Grid>
-        
+
+        <ListBox Width="100" Height="270" ItemsSource="{Binding Lines}" Margin="10,41,408.4,9.8"/>
+        <Label x:Name="label" Content="From" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="100" FontWeight="Bold"/>
     </Grid>
 </Window>
